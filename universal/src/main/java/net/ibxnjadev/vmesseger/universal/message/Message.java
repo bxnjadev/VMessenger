@@ -1,5 +1,7 @@
 package net.ibxnjadev.vmesseger.universal.message;
 
+import java.beans.ConstructorProperties;
+
 /**
  * Message send for messenger
  */
@@ -9,6 +11,7 @@ public class Message {
     private final String content;
     private final String subChannel;
 
+    @ConstructorProperties({"subChannel","content"})
     public Message(String subChannel, String content) {
         this.subChannel = subChannel;
         this.content = content;
