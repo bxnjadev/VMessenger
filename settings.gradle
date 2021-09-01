@@ -1,0 +1,4 @@
+rootProject.name = 'VMessenger'
+include 'universal'
+include 'jackson-adapter'
+

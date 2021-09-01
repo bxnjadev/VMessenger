@@ -1,0 +1,10 @@
+# ide files
+.idea
+*.iml
+
+# gradle files
+.gradle
+
+# folders
+/universal/build/
+/jackson-adapter/build/

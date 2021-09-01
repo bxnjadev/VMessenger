@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'net.ibxnjadev.vmessenger.serialize.jackson'
+version '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.0.1'
+    compileOnly project(":universal")
+}
+
+test {
+    useJUnitPlatform()
+}
