@@ -35,7 +35,10 @@ public interface Messenger {
      * @param interceptor the interceptor
      */
 
-    <T> void intercept(String subChannel, Class<T> clazz, Predicate<T> predicate, Consumer<T> interceptor);
+    default <T> void intercept(String subChannel, Class<T> clazz, Predicate<T> predicate, Consumer<T> interceptor) {
+        getInterceptorHandler()
+                .register(subChannel, new DefaultInterceptorData<>(clazz, interceptor, predicate));
+    }
 
     /**
      * This is executed when message is received
@@ -52,7 +55,10 @@ public interface Messenger {
      * unregister all interceptors
      */
 
-    void unregisterAll();
+    default void unregisterAll() {
+        getInterceptorHandler()
+                .unregisterAll();
+    }
 
     /**
      * @return the channel name

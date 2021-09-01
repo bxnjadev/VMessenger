@@ -1,7 +1,6 @@
-package net.ibxnjadev.vmessenger.serialize.jackson;
+package net.ibxnjadev.vmesseger.universal.serialize;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.ibxnjadev.vmesseger.universal.serialize.ObjectSerialize;
 
 import java.io.IOException;
 
@@ -40,4 +39,5 @@ public class ObjectJacksonAdapter implements ObjectSerialize {
         }
         return null;
     }
+
 }
