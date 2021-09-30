@@ -2,18 +2,33 @@ plugins {
     id 'java'
 }
 
-group 'net.ibxnjadev.vmessenger'
-version '0.1.0'
+subprojects {
+    
+    apply plugin: 'maven-publish'
+    apply plugin: 'java-library'
 
-repositories {
-    mavenCentral()
+    group 'net.ibxnjadev.vmessenger'
+    version '0.1.0'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    }
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-}
-
-test {
-    useJUnitPlatform()
-}

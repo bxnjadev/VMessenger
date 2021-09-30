@@ -24,20 +24,9 @@ public interface Messenger {
      * @param interceptor the interceptor
      */
 
-    default <T> void intercept(String subChannel, Class<T> clazz, Consumer<T> interceptor) {
-        intercept(subChannel, clazz, null, interceptor);
-    }
-
-    /**
-     * intercept when is received the message
-     * @param subChannel the subChannel
-     * @param predicate this check if condition and execute the interceptor
-     * @param interceptor the interceptor
-     */
-
-    default <T> void intercept(String subChannel, Class<T> clazz, Predicate<T> predicate, Consumer<T> interceptor) {
+    default <T> void intercept(String subChannel, Class<T> clazz, Interceptor<T> interceptor) {
         getInterceptorHandler()
-                .register(subChannel, new DefaultInterceptorData<>(clazz, interceptor, predicate));
+                .register(subChannel, new DefaultInterceptorData<>(clazz, interceptor));
     }
 
     /**

@@ -6,6 +6,7 @@
 .gradle
 
 # folders
+/build/
 /universal/build/
 /redis/build/
 /gson-adapter/build/

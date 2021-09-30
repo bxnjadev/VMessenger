@@ -1,6 +1,7 @@
 package net.ibxnjadev.vmesseger.universal.executor;
 
 import net.ibxnjadev.vmesseger.universal.DataInterceptor;
+import net.ibxnjadev.vmesseger.universal.Interceptor;
 
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -10,18 +11,12 @@ public class DefaultInterceptorExecutor implements InterceptorExecutor {
 
     @Override
     public <T> void execute(T object, DataInterceptor<T> interceptorData) {
-        Optional<Predicate<T>> optionalPredicate = interceptorData.getPredicate();
+        Interceptor<T> interceptor = interceptorData.getInterceptor();
 
-        if (optionalPredicate.isPresent()) {
-            Predicate<T> predicate = optionalPredicate.get();
-
-            if (!predicate.test(object)) {
-                return;
-            }
+        if (interceptor.check(object)) {
+            interceptor.subscribe(object);
         }
 
-        Consumer<T> interceptor = interceptorData.getInterceptor();
-        interceptor.accept(object);
     }
 
 }

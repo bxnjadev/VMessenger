@@ -17,15 +17,9 @@ public interface DataInterceptor<T> {
     Class<T> getClazz();
 
     /**
-     * @return A interceptor
+     * @return The interceptor
      */
 
-    Consumer<T> getInterceptor();
-
-    /**
-     * @return The interceptor predicate, be can null
-     */
-
-    Optional<Predicate<T>> getPredicate();
+    Interceptor<T> getInterceptor();
 
 }
