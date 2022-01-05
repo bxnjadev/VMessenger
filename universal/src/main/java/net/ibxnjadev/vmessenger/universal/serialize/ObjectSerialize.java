@@ -1,4 +1,4 @@
-package net.ibxnjadev.vmesseger.universal.serialize;
+package net.ibxnjadev.vmessenger.universal.serialize;
 
 /**
  * Serialize and deserialize a object

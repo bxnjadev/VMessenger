@@ -1,4 +1,4 @@
-package net.ibxnjadev.vmesseger.universal;
+package net.ibxnjadev.vmessenger.universal;
 
 import java.util.HashSet;
 import java.util.Set;

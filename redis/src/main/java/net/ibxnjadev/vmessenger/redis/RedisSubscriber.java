@@ -1,7 +1,7 @@
 package net.ibxnjadev.vmessenger.redis;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.ibxnjadev.vmesseger.universal.Messenger;
+import net.ibxnjadev.vmessenger.universal.Messenger;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 

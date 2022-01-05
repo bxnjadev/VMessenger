@@ -1,8 +1,8 @@
 package net.ibxnjadev.vmessenger.redis;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.ibxnjadev.vmesseger.universal.Messenger;
-import net.ibxnjadev.vmesseger.universal.message.Message;
+import net.ibxnjadev.vmessenger.universal.Messenger;
+import net.ibxnjadev.vmessenger.universal.message.Message;
 import redis.clients.jedis.JedisPubSub;
 
 import java.io.IOException;
@@ -23,6 +23,7 @@ public class RedisMessageListener extends JedisPubSub {
     @Override
     public void onMessage(String channel, String content) {
         try {
+            System.out.println(content);
             Message message = mapper.readValue(content, Message.class);
             messenger.call(message.getSubChannel(), message.getContent());
         } catch (IOException e) {

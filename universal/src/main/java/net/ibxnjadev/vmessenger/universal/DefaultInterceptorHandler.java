@@ -1,12 +1,11 @@
-package net.ibxnjadev.vmesseger.universal;
+package net.ibxnjadev.vmessenger.universal;
 
-import net.ibxnjadev.vmesseger.universal.executor.DefaultInterceptorExecutor;
-import net.ibxnjadev.vmesseger.universal.executor.InterceptorExecutor;
-import net.ibxnjadev.vmesseger.universal.serialize.ObjectSerialize;
+import net.ibxnjadev.vmessenger.universal.executor.DefaultInterceptorExecutor;
+import net.ibxnjadev.vmessenger.universal.executor.InterceptorExecutor;
+import net.ibxnjadev.vmessenger.universal.serialize.ObjectSerialize;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class DefaultInterceptorHandler implements InterceptorHandler {
 

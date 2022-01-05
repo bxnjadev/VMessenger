@@ -1,7 +1,4 @@
-package net.ibxnjadev.vmesseger.universal;
-
-import java.util.function.Consumer;
-import java.util.function.Predicate;
+package net.ibxnjadev.vmessenger.universal;
 
 /**
  * The messenger for can send message and intercept

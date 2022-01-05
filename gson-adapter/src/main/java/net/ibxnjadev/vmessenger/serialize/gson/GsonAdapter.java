@@ -1,7 +1,7 @@
 package net.ibxnjadev.vmessenger.serialize.gson;
 
 import com.google.gson.Gson;
-import net.ibxnjadev.vmesseger.universal.serialize.ObjectSerialize;
+import net.ibxnjadev.vmessenger.universal.serialize.ObjectSerialize;
 
 /**
  * Adapter for Gson

@@ -1,4 +1,4 @@
-package net.ibxnjadev.vmesseger.universal;
+package net.ibxnjadev.vmessenger.universal;
 
 /**
  * Manage all interceptors

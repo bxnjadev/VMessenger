@@ -1,4 +1,4 @@
-package net.ibxnjadev.vmesseger.universal.serialize;
+package net.ibxnjadev.vmessenger.universal.serialize;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

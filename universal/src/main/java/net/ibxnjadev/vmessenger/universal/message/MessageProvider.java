@@ -1,4 +1,4 @@
-package net.ibxnjadev.vmesseger.universal.message;
+package net.ibxnjadev.vmessenger.universal.message;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

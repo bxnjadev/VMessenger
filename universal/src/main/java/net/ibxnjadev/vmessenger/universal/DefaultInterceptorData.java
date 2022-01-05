@@ -1,7 +1,4 @@
-package net.ibxnjadev.vmesseger.universal;
-
-import java.util.Optional;
-import java.util.function.Predicate;
+package net.ibxnjadev.vmessenger.universal;
 
 public class DefaultInterceptorData<T> implements DataInterceptor<T> {
 

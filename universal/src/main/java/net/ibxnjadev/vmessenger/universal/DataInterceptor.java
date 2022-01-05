@@ -1,8 +1,4 @@
-package net.ibxnjadev.vmesseger.universal;
-
-import java.util.Optional;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
+package net.ibxnjadev.vmessenger.universal;
 
 /**
  * Contain the data for a interceptor of a object

@@ -1,11 +1,7 @@
-package net.ibxnjadev.vmesseger.universal.executor;
+package net.ibxnjadev.vmessenger.universal.executor;
 
-import net.ibxnjadev.vmesseger.universal.DataInterceptor;
-import net.ibxnjadev.vmesseger.universal.Interceptor;
-
-import java.util.Optional;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
+import net.ibxnjadev.vmessenger.universal.DataInterceptor;
+import net.ibxnjadev.vmessenger.universal.Interceptor;
 
 public class DefaultInterceptorExecutor implements InterceptorExecutor {
 

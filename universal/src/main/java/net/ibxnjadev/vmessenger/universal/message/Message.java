@@ -1,4 +1,4 @@
-package net.ibxnjadev.vmesseger.universal.message;
+package net.ibxnjadev.vmessenger.universal.message;
 
 import java.beans.ConstructorProperties;
 
@@ -11,7 +11,7 @@ public class Message {
     private final String content;
     private final String subChannel;
 
-    @ConstructorProperties({"subChannel","content"})
+    @ConstructorProperties({"subChannel", "content"})
     public Message(String subChannel, String content) {
         this.subChannel = subChannel;
         this.content = content;
@@ -19,6 +19,7 @@ public class Message {
 
     /**
      * The content that will be serialized
+     *
      * @return the content
      */
 

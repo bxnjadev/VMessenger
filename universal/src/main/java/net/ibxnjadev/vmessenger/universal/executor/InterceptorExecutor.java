@@ -1,6 +1,6 @@
-package net.ibxnjadev.vmesseger.universal.executor;
+package net.ibxnjadev.vmessenger.universal.executor;
 
-import net.ibxnjadev.vmesseger.universal.DataInterceptor;
+import net.ibxnjadev.vmessenger.universal.DataInterceptor;
 
 public interface InterceptorExecutor {
 
