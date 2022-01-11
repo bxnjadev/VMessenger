@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.ibxnjadev.vmessenger",
+    "module": "jackson-adapter",
+    "version": "0.1.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8",
+      "buildId": "xuy7nmp3qfh65brumqkmwwyq7m"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "jackson-adapter-0.1.0.jar",
+          "url": "jackson-adapter-0.1.0.jar",
+          "size": 261,
+          "sha512": "5e10fe48a7fa713a4baf6ef82bcfaa1d1fe9790fc8365e82f3daa4c55bd1b3be438b7c292e7098b3f235fd6252908d21324c50e3fd42b0a4e240ae8e44003400",
+          "sha256": "1c8daa96c4ef8956bb1a8534eaec5b7217c2b5bd18fb449501454945ef24d4bd",
+          "sha1": "0003982297c10bcef53d593813984921b1cf3098",
+          "md5": "16007d0ba68403d193602f2af0c869f6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "jackson-adapter-0.1.0.jar",
+          "url": "jackson-adapter-0.1.0.jar",
+          "size": 261,
+          "sha512": "5e10fe48a7fa713a4baf6ef82bcfaa1d1fe9790fc8365e82f3daa4c55bd1b3be438b7c292e7098b3f235fd6252908d21324c50e3fd42b0a4e240ae8e44003400",
+          "sha256": "1c8daa96c4ef8956bb1a8534eaec5b7217c2b5bd18fb449501454945ef24d4bd",
+          "sha1": "0003982297c10bcef53d593813984921b1cf3098",
+          "md5": "16007d0ba68403d193602f2af0c869f6"
+        }
+      ]
+    }
+  ]
+}

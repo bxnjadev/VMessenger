@@ -25,14 +25,16 @@ public class RedisMessenger implements Messenger {
 
     public RedisMessenger(String channelName,
                           JedisPool jedisPool,
+                          Jedis jedis,
                           ObjectSerialize objectSerialize,
                           ObjectMapper mapper) {
-        this(channelName, new DefaultInterceptorHandler(objectSerialize), jedisPool, objectSerialize, mapper);
+        this(channelName, new DefaultInterceptorHandler(objectSerialize), jedisPool, jedis, objectSerialize, mapper);
     }
 
     public RedisMessenger(String channelName,
                           InterceptorHandler interceptorHandler,
                           JedisPool jedisPool,
+                          Jedis jedis,
                           ObjectSerialize objectSerialize,
                           ObjectMapper mapper) {
         this.interceptorHandler = interceptorHandler;
@@ -41,7 +43,7 @@ public class RedisMessenger implements Messenger {
         this.channelName = channelName;
         this.mapper = mapper;
 
-        RedisSubscriber subscriber = new RedisSubscriber(channelName, jedisPool, mapper, this);
+        RedisSubscriber subscriber = new RedisSubscriber(channelName, jedis, mapper, this);
     }
 
     @Override

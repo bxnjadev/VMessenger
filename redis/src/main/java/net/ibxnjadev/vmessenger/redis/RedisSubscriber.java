@@ -12,18 +12,18 @@ import redis.clients.jedis.JedisPool;
 public class RedisSubscriber {
 
     private final String channelName;
-    private final JedisPool jedisPool;
+    private final Jedis jedis;
     private final ObjectMapper mapper;
     private final Messenger messenger;
 
     public RedisSubscriber(
             String channelName,
-            JedisPool jedisPool,
+            Jedis jedis,
             ObjectMapper mapper,
             Messenger messenger
     ) {
         this.channelName = channelName;
-        this.jedisPool = jedisPool;
+        this.jedis = jedis;
         this.mapper = mapper;
         this.messenger = messenger;
 
@@ -32,9 +32,7 @@ public class RedisSubscriber {
 
     public void subscribe() {
         new Thread(() -> {
-            try (Jedis jedis = jedisPool.getResource()) {
-                jedis.subscribe(new RedisMessageListener(messenger, mapper), channelName);
-            }
+            jedis.subscribe(new RedisMessageListener(messenger, mapper), channelName);
         }).start();
     }
 
