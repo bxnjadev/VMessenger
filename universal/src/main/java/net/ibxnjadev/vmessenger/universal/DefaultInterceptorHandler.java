@@ -18,30 +18,28 @@ public class DefaultInterceptorHandler implements InterceptorHandler {
     }
 
     @Override
-    public <T> void register(String subChannel, DataInterceptor<T> dataInterceptor) {
-
-        CompoundInterceptor<T> compoundInterceptor = (CompoundInterceptor<T>) interceptors.get(subChannel);
+    public <T> void register(DataInterceptor<T> dataInterceptor) {
+        Class<T> clazz = dataInterceptor.getClazz();
+        CompoundInterceptor<T> compoundInterceptor = (CompoundInterceptor<T>) interceptors.get(clazz.getSimpleName());
 
         if (compoundInterceptor == null) {
             compoundInterceptor = new CompoundInterceptor<>();
-            interceptors.put(subChannel, compoundInterceptor);
+            interceptors.put(clazz.getSimpleName(), compoundInterceptor);
         }
 
         compoundInterceptor.register(dataInterceptor);
     }
 
     @Override
-    public <T> void call(String subChannel, String content) {
+    public <T> void call(String className, String content) {
 
-        CompoundInterceptor<T> compoundInterceptor = (CompoundInterceptor<T>) interceptors.get(subChannel);
+        CompoundInterceptor<T> compoundInterceptor = (CompoundInterceptor<T>) interceptors.get(className);
 
-        if (compoundInterceptor == null) {
-            return;
-        }
-
-        for (DataInterceptor<T> interceptor : compoundInterceptor.getInterceptors()) {
-            interceptorExecutor.execute(
-                    objectSerialize.deserialize(interceptor.getClazz(), content), interceptor);
+        if (compoundInterceptor != null) {
+            for (DataInterceptor<T> interceptor : compoundInterceptor.getInterceptors()) {
+                interceptorExecutor.execute(
+                        objectSerialize.deserialize(interceptor.getClazz(), content), interceptor);
+            }
         }
 
     }

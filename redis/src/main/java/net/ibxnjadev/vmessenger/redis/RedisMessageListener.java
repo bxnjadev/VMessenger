@@ -23,11 +23,11 @@ public class RedisMessageListener extends JedisPubSub {
     @Override
     public void onMessage(String channel, String content) {
         try {
-            System.out.println(content);
             Message message = mapper.readValue(content, Message.class);
             messenger.call(message.getSubChannel(), message.getContent());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

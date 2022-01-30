@@ -8,19 +8,18 @@ public interface InterceptorHandler {
 
     /**
      * Register a Data Interceptor that content interceptor information
-     * @param subChannel the subChannel
      * @param dataInterceptor the dataInterceptor
      */
 
-    <T> void register(String subChannel, DataInterceptor<T> dataInterceptor);
+    <T> void register(DataInterceptor<T> dataInterceptor);
 
     /**
      * Call all interceptors
-     * @param subChannel the subChannel
+     * @param className the class name
      * @param content the content
      */
 
-    <T> void call(String subChannel, String content);
+    <T> void call(String className, String content);
 
     /**
      * unregister all

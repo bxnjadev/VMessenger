@@ -47,11 +47,11 @@ public class RedisMessenger implements Messenger {
     }
 
     @Override
-    public <T> void sendMessage(String subChannel, T object) {
-        Message message = new Message(subChannel, objectSerialize.serialize(object));
+    public <T> void sendMessage(T object) {
+        Message message = new Message(object.getClass().getSimpleName()
+                , objectSerialize.serialize(object));
 
         try (Jedis jedis = jedisPool.getResource()) {
-
             try {
                 String messageString = mapper.writeValueAsString(message);
                 jedis.publish(channelName, messageString);
@@ -63,7 +63,7 @@ public class RedisMessenger implements Messenger {
     }
 
     @Override
-    public String getChannelName() {
+    public String getChannel() {
         return channelName;
     }
 

@@ -8,22 +8,19 @@ public interface Messenger {
 
     /**
      * Send the message
-     * @param subChannel the subChannel
      * @param object the object that send
      */
 
-    <T> void sendMessage(String subChannel, T object);
+    <T> void sendMessage(T object);
 
     /**
      * intercept when is received the message
-     * @param subChannel the subChannel
      * @param clazz the object clazz
      * @param interceptor the interceptor
      */
 
-    default <T> void intercept(String subChannel, Class<T> clazz, Interceptor<T> interceptor) {
-        getInterceptorHandler()
-                .register(subChannel, new DefaultInterceptorData<>(clazz, interceptor));
+    default <T> void intercept(Class<T> clazz, Interceptor<T> interceptor) {
+        getInterceptorHandler().register(new DefaultInterceptorData<>(clazz, interceptor));
     }
 
     /**
@@ -33,8 +30,7 @@ public interface Messenger {
      */
 
     default void call(String subChannel, String content) {
-        getInterceptorHandler()
-                .call(subChannel, content);
+        getInterceptorHandler().call(subChannel, content);
     }
 
     /**
@@ -42,15 +38,14 @@ public interface Messenger {
      */
 
     default void unregisterAll() {
-        getInterceptorHandler()
-                .unregisterAll();
+        getInterceptorHandler().unregisterAll();
     }
 
     /**
      * @return the channel name
      */
 
-    String getChannelName();
+    String getChannel();
 
     /**
      * @return the interceptor handler
