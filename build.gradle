@@ -8,7 +8,7 @@ subprojects {
     apply plugin: 'java-library'
 
     group 'net.ibxnjadev.vmessenger'
-    version '0.1.0'
+    version '0.1.5'
 
     repositories {
         mavenCentral()

@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'net.ibxnjadev.vmessenger.redis'
-version '0.1.0'
+version '0.1.5'
 
 dependencies {
     implementation 'redis.clients:jedis:3.7.0'
